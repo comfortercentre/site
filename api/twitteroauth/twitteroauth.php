@@ -1,19 +1,19 @@
 <?php
 
 /*
- * Abraham Williams (abraham@abrah.am) http://abrah.am
+ * Abraham Williams (abraham@abrah.am) https://abrah.am
  *
  * The first PHP Library to support OAuth for Twitter's REST API.
  */
 
-/* Load OAuth lib. You can find it at http://oauth.net */
+/* Load OAuth lib. You can find it at https://oauth.net */
 require_once('OAuth.php');
 
 /**
  * Twitter OAuth class
  */
 class TwitterOAuth {
-  /* Contains the last HTTP status code returned. */
+  /* Contains the last https status code returned. */
   public $http_code;
   /* Contains the last API call. */
   public $url;
@@ -29,7 +29,7 @@ class TwitterOAuth {
   public $format = 'json';
   /* Decode returned json data. */
   public $decode_json = TRUE;
-  /* Contains the last HTTP headers returned. */
+  /* Contains the last https headers returned. */
   public $http_info;
   /* Set the useragnet. */
   public $useragent = 'TwitterOAuth v0.2.0-beta2';
@@ -172,25 +172,25 @@ class TwitterOAuth {
    * Format and sign an OAuth / API request
    */
   function oAuthRequest($url, $method, $parameters) {
-    if (strrpos($url, 'https://') !== 0 && strrpos($url, 'http://') !== 0) {
+    if (strrpos($url, 'https://') !== 0 && strrpos($url, 'https://') !== 0) {
       $url = "{$this->host}{$url}.{$this->format}";
     }
     $request = OAuthRequest::from_consumer_and_token($this->consumer, $this->token, $method, $url, $parameters);
     $request->sign_request($this->sha1_method, $this->consumer, $this->token);
     switch ($method) {
     case 'GET':
-      return $this->http($request->to_url(), 'GET');
+      return $this->https($request->to_url(), 'GET');
     default:
-      return $this->http($request->get_normalized_http_url(), $method, $request->to_postdata());
+      return $this->https($request->get_normalized_http_url(), $method, $request->to_postdata());
     }
   }
 
   /**
-   * Make an HTTP request
+   * Make an https request
    *
    * @return API results
    */
-  function http($url, $method, $postfields = NULL) {
+  function https($url, $method, $postfields = NULL) {
     $this->http_info = array();
     $ci = curl_init();
     /* Curl settings */

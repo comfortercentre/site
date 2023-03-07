@@ -9,9 +9,9 @@ Author:	imithemes
 @import url("font-awesome.css");
 @import url("line-icons.css");
 @import url("animations.css");
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,300);
-@import url(http://fonts.googleapis.com/css?family=Volkhov:400,400italic);
-@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
+@import url(https://fonts.googleapis.com/css?family=Volkhov:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Clicker+Script);
 
 /*------------------------------------------------------------------
 [Table of contents]
@@ -3959,7 +3959,7 @@ blockquote {
     padding: 0.5em 2em 0.5em 3em;
 	border: none;
 }
-/* Thanks: http://callmenick.com/post/styling-blockquotes-with-css-pseudo-classes */
+/* Thanks: https://callmenick.com/post/styling-blockquotes-with-css-pseudo-classes */
 blockquote:before {
     font-family: Georgia, serif;
     position: absolute;

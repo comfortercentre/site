@@ -15,7 +15,7 @@ $(document).ready(function() {
 		badIE = $('html').prop('class').match(/ie(6|7|8)/)|| false;
 		
 	//handle external links (new window)
-	$('a[href^=http]').bind('click',function(){
+	$('a[href^=https]').bind('click',function(){
 		window.open($(this).attr('href'));
 		return false;
 	});

@@ -1,6 +1,6 @@
 /**
  * Galleria v 1.3.5 2014-01-25
- * http://galleria.io
+ * https://galleria.io
  *
  * Licensed under the MIT license
  * https://raw.github.com/aino/galleria/master/LICENSE
@@ -117,7 +117,7 @@ var doc    = window.document,
         youtube: {
             reg: /https?:\/\/(?:[a-zA_Z]{2,3}.)?(?:youtube\.com\/watch\?)((?:[\w\d\-\_\=]+&amp;(?:amp;)?)*v(?:&lt;[A-Z]+&gt;)?=([0-9a-zA-Z\-\_]+))/i,
             embed: function() {
-                return 'http://www.youtube.com/embed/' + this.id;
+                return 'https://www.youtube.com/embed/' + this.id;
             },
             getUrl: function() {
                 return PROT + '//gdata.youtube.com/feeds/api/videos/' + this.id + '?v=2&alt=json-in-script&callback=?';
@@ -135,7 +135,7 @@ var doc    = window.document,
         vimeo: {
             reg: /https?:\/\/(?:www\.)?(vimeo\.com)\/(?:hd#)?([0-9]+)/i,
             embed: function() {
-                return 'http://player.vimeo.com/video/' + this.id;
+                return 'https://player.vimeo.com/video/' + this.id;
             },
             getUrl: function() {
                 return PROT + '//vimeo.com/api/v2/video/' + this.id + '.json?callback=?';
@@ -873,7 +873,7 @@ var doc    = window.document,
                             // If failed, tell the dev to download the latest theme
                             Galleria.raise( 'Theme CSS could not load after 20 sec. ' + ( Galleria.QUIRK ?
                                 'Your browser is in Quirks Mode, please add a correct doctype.' :
-                                'Please download the latest theme at http://galleria.io/customer/.' ), true );
+                                'Please download the latest theme at https://galleria.io/customer/.' ), true );
                         },
                         timeout: 5000
                     });
@@ -1108,7 +1108,7 @@ $win.on( 'orientationchange', function() {
 
     @example var gallery = new Galleria();
 
-    @author http://aino.se
+    @author https://aino.se
 
     @requires jQuery
 
@@ -3218,7 +3218,7 @@ Galleria.prototype = {
             thumbchunk = [],
             loadindex = 0,
 
-            gif = IE < 8 ? 'http://upload.wikimedia.org/wikipedia/commons/c/c0/Blank.gif' :
+            gif = IE < 8 ? 'https://upload.wikimedia.org/wikipedia/commons/c/c0/Blank.gif' :
                            'data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw%3D%3D',
 
             // get previously active thumbnail, if exists
@@ -6229,7 +6229,7 @@ Galleria.Picture.prototype = {
                     };
 
                     // Delay the callback to "fix" the Adblock Bug
-                    // http://code.google.com/p/adblockforchrome/issues/detail?id=3701
+                    // https://code.google.com/p/adblockforchrome/issues/detail?id=3701
                     if ( ( !this.width || !this.height ) ) {
                         (function( img ) {
                             Utils.wait({
